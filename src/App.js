@@ -33,7 +33,7 @@ componentDidMount(){
   render(){
     const {globalData, countries} = this.state;
     return (
-      <div>
+      <div className='content'>
         <CovidInformation />
         <div className='data'>
           <div className="global-data">
@@ -43,6 +43,7 @@ componentDidMount(){
         <CountriesData countriesData={countries}/>
         </div>
         </div>
+        
 
       </div>
     )

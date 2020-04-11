@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    text-align: center;
+    background-color: tomato;
+    color: rgb(243, 207, 207);
+    flex-shrink: 0;
+    height: 100px;
+    align-items:center;
+    justify-content: flex-start;
+
+  
+}
+
+.content{
+    flex-direction: column;
+}
+
+.github{
+    margin-right: 150px;
+    
+}
