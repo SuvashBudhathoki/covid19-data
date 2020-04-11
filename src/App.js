@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import GlobalData from './globalData/GlobalData';
 import CountriesData from './countriesData/CountriesData';
+import CovidInformation from './covid-information/CovidInformation'
 
 
 
@@ -10,8 +11,7 @@ class App extends React.Component{
     super();
     this.state={
       globalData:[],
-      countries:[]
-
+      countries:[],
     }
   }
 getData = async () =>{
@@ -34,8 +34,15 @@ componentDidMount(){
     const {globalData, countries} = this.state;
     return (
       <div>
-        <GlobalData country={globalData}/>
+        <CovidInformation />
+        <div className='data'>
+          <div className="global-data">
+        <GlobalData  country={globalData}/>
+        </div>
+        <div className="countries-data">
         <CountriesData countriesData={countries}/>
+        </div>
+        </div>
 
       </div>
     )

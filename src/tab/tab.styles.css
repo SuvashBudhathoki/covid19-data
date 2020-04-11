@@ -1,0 +1,11 @@
+.tab-list-item{
+    display: flex;
+    margin-bottom: -1px;
+    padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active{
+    background-color: white;
+    border: solod #ccc;
+    border-width: 1px 1px 0 1px;
+}

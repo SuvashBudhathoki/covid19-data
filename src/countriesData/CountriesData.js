@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomChart from '../chart/CustomChart';
-import {Line} from 'react-chartjs-2'
+import {Line} from 'react-chartjs-2';
+import './countries-data.styles.css';
 
 class CountriesData extends React.Component{
     constructor(props){
@@ -20,8 +21,9 @@ handleChange = e =>{
         const {selectedCountry}= this.state;
         const {countriesData} = this.props;
         return(
-<div>
-    <select onChange={this.handleChange}>
+<div >
+<label>Country </label>
+    <select className="countries-data" onChange={this.handleChange}>
        {countriesData.map(country=> <option key={country.CountryCode}>{country.Country}</option>)}
     </select>
     {selectedCountry?(countriesData.map(country => selectedCountry === country.Country ? <CustomChart key={country.CountryCode} value={Line} country={country} />:"")):("")}

@@ -7,12 +7,12 @@ class CustomChart extends React.Component{
             
             chartData:{
                     
-                labels:['Total Deaths', 'Total Recovered', 'Total Confirmed'],
+                labels:['Total Confirmed', 'Total Recovered', 'Total Deaths'],
                 datasets:[{
                     label: 'covid19 cases',
                     backgroundColor:['yellow'],
                     borderWidth: 1,
-                    data: [this.props.country.TotalDeaths , this.props.country.TotalRecovered ,this.props.country.TotalConfirmed],
+                    data: [this.props.country.TotalConfirmed , this.props.country.TotalRecovered ,this.props.country.TotalDeaths],
     
                 }]
                 
@@ -35,12 +35,12 @@ getChartData = (props)=>{
     this.setState(({
         chartData:{
                     
-            labels:['Total Deaths', 'Total Recovered', 'Total Confirmed'],
+            labels:['Total Confirmed', 'Total Recovered', 'Total Deaths'],
             datasets:[{
                 label: 'covid19 cases',
-                backgroundColor:['yellow','red','green'],
+                backgroundColor:['lightblue','lightgreen','red'],
                 borderWidth: 1,
-                data: [props.country.TotalDeaths  , props.country.TotalRecovered ,props.country.TotalConfirmed],
+                data: [props.country.TotalConfirmed  , props.country.TotalRecovered ,props.country.TotalDeaths],
 
             }]
             
@@ -62,7 +62,7 @@ getChartData = (props)=>{
 
         return (
             <div>
-                <this.state.chartType data={this.state.chartData} height={50}
+                <this.state.chartType data={this.state.chartData} height={150}
                 options={{
                     title:{
                         display:this.props.displayTitle,
@@ -70,7 +70,7 @@ getChartData = (props)=>{
                     },
                     legend:{
                         display:this.props.displayLegend,
-                        position:'right'
+                        position:'bottom'
                     }
                 }}
                 />
