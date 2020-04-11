@@ -1,37 +1,45 @@
 import React from 'react';
 
 class CustomChart extends React.Component{
+
+
     constructor(props){
         super(props);
         this.state={
             
-            chartData:{
-                    
-                labels:['Total Confirmed', 'Total Recovered', 'Total Deaths'],
-                datasets:[{
-                    label: 'covid19 cases',
-                    backgroundColor:['yellow'],
-                    borderWidth: 1,
-                    data: [this.props.country.TotalConfirmed , this.props.country.TotalRecovered ,this.props.country.TotalDeaths],
-    
-                }]
-                
-            }
-    
-           ,
-            chartType:this.props.value,
-            countryName: this.props.country.Country ? this.props.country.Country : "Global" 
             
-
-        }
+            
+                chartData:{
+                        
+                    labels:['Total Confirmed', 'Total Recovered', 'Total Deaths'],
+                    datasets:[{
+                        label: 'covid19 cases',
+                        backgroundColor:['yellow'],
+                        borderWidth: 1,
+                        data: [this.props.country.TotalConfirmed , this.props.country.TotalRecovered ,this.props.country.TotalDeaths],
+        
+                    }]
+                    
+                }
+        
+               ,
+                chartType:this.props.value,
+                countryName: this.props.country.Country ? this.props.country.Country : "Global" 
+                
+    
+            }
     }
 
 
-UNSAFE_componentWillReceiveProps(props){
-        this.getChartData(props)
+componentDidUpdate(prevPprops)
+{
+    if(prevPprops.country.TotalDeaths !== this.props.country.TotalDeaths || prevPprops.country.TotalConfirmed !== this.props.country.TotalConfirmed || prevPprops.country.TotalRecovered !== this.props.country.TotalRecovered ){
+        this.getChartData(this.props)
     }
+    
+}
 
-getChartData = (props)=>{
+getChartData = ()=>{
     this.setState(({
         chartData:{
                     
@@ -40,7 +48,7 @@ getChartData = (props)=>{
                 label: 'covid19 cases',
                 backgroundColor:['lightblue','lightgreen','red'],
                 borderWidth: 1,
-                data: [props.country.TotalConfirmed  , props.country.TotalRecovered ,props.country.TotalDeaths],
+                data: [this.props.country.TotalConfirmed  , this.props.country.TotalRecovered ,this.props.country.TotalDeaths],
 
             }]
             
@@ -50,8 +58,6 @@ getChartData = (props)=>{
     }))
 }
 
-
-
     static defaultProps={
         displayTitle:true,
         displayLegend:true
@@ -60,7 +66,6 @@ getChartData = (props)=>{
         
         return (
             <div>
-               {console.log(this.state.chartType)}
                 <this.state.chartType data={this.state.chartData} height={125}
                 options={{
                     title:{
@@ -79,4 +84,7 @@ getChartData = (props)=>{
 }
 
 export default CustomChart;
+
+
+
 

@@ -1,7 +1,7 @@
 const data = {
     symptoms:{
         label:'Symptoms',
-        options:['cough', 'fever']
+        options:['Cough', 'Fever', 'Tiredness', 'Difficulty breathing (severe cases)']
     },
     do:{
         label: `Do's`,
@@ -15,7 +15,18 @@ const data = {
     donot:{
 label:`Don't`,
 options:['Touch your eyes, nose or mouth if your hands are not clean']
+    },
+    myths:{
+        label:'Myths',
+        options:[
+            '5G mobile networks spread COVID-19',
+            'Being able to hold breath for 10 seconds means you are free from COVID-19 ',
+            'Drinking alcohol does not protect you against COVID-19',
+            'Taking hot bath prevents the disease'
+        ]
     }
+    
+    
 
     
 }
