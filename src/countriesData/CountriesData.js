@@ -22,11 +22,11 @@ handleChange = e =>{
         const {countriesData} = this.props;
         return(
 <div >
-<label>Country </label>
     <select className="countries-data" onChange={this.handleChange}>
+        <option> Select the country from the list</option>
        {countriesData.map(country=> <option key={country.CountryCode}>{country.Country}</option>)}
     </select>
-    {selectedCountry?(countriesData.map(country => selectedCountry === country.Country ? <CustomChart key={country.CountryCode} value={Line} country={country} />:"")):("")}
+    {!selectedCountry.includes('Select the country') && selectedCountry?(countriesData.map(country => selectedCountry === country.Country ? <CustomChart key={country.CountryCode} value={Line} country={country} />:"")):("")}
 
     </div>
         )

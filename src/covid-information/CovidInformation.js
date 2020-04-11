@@ -1,22 +1,32 @@
 import React from 'react';
 import './covid-information.styles.css'
 import TabList from '../tablist/TabList';
+import image from './images.jpeg';
+import covidData from './covid-data';
 
 const CovidInformation = ()=>(
-    <div >
-        <TabList>
-            <div label="symptom">
-                Covid symptoms
-            </div>
-            <div label="Prevention">
-                Covid prevention
-            </div>
-            <div label="dos and don't">
-                Covid dos and donts
-            </div>
-        </TabList>
+    <div className='container'>
+    <div className='card-container'>
+    <TabList>    
+    {covidData.map((data, index)=> <div key={index} label={data.label}> 
+        <ul>
+            {data.options.map((option,index)=><li key={index}>{option}</li>)}
+        </ul>
+        </div>
+    )}
+    </TabList>
+
+</div>
+
+        <div className='image-container'>
+            <img className='image' src={image} alt='covid19 update' />
+           
+        </div>
     </div>
 )
 
 
 export default CovidInformation;
+
+
+

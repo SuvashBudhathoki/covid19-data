@@ -57,12 +57,11 @@ getChartData = (props)=>{
         displayLegend:true
     }
     render(){
-        console.log(this.props.country.TotalDeaths)
         
-
         return (
             <div>
-                <this.state.chartType data={this.state.chartData} height={150}
+               {console.log(this.state.chartType)}
+                <this.state.chartType data={this.state.chartData} height={125}
                 options={{
                     title:{
                         display:this.props.displayTitle,
