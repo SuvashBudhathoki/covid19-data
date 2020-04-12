@@ -6,17 +6,14 @@ class CustomChart extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            
-            
-            
-                chartData:{
+            chartData:{
                         
                     labels:['Total Confirmed', 'Total Recovered', 'Total Deaths'],
                     datasets:[{
                         label: 'covid19 cases',
                         backgroundColor:['yellow'],
                         borderWidth: 1,
-                        data: [this.props.country.TotalConfirmed , this.props.country.TotalRecovered ,this.props.country.TotalDeaths],
+                        data: [this.props.country.TotalConfirmed , this.props.country.TotalRecovered ,this.props.country.TotalDeaths ],
         
                     }]
                     
