@@ -13,7 +13,6 @@
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
     width: 25%;
-    margin-right: 245px;
     height: 200px;
     overflow: hidden;
 
@@ -25,7 +24,6 @@
 
 .image-container{
     width: 50%;
-    margin:auto;
     
 }
 .image{
